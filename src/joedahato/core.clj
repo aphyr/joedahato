@@ -28,7 +28,50 @@
    "6/26/2012" "black/black"
    "6/27/2012" "light grey/black"
    "7/2/2012"  "red/white"
-   "7/3/2012"  "teal/white"})
+   "7/3/2012"  "teal/white"
+   "7/5/2012"  "black/black"
+   "7/6/2012"  "red/white"
+   "7/9/2012"  "black/black"
+   "7/10/2012" "sky blue/white"
+   "7/12/2012" "black/black"
+   "7/13/2012" "light grey/black"
+   "7/24/2012" "black/white"
+   "7/25/2012" "sky blue/white"
+   "7/26/2012" "black/white"
+   "7/27/2012" "black/black"
+   "7/30/2012" "red/white"
+   "8/6/2012"  "red/white"
+   "8/7/2012"  "light grey/black"
+   "8/8/2012"  "black/white"
+   "8/9/2012"  "black/white"
+   "8/10/2012" "black/white"
+   "8/14/2012" "no hat"
+   "8/15/2012" "light grey/black"
+   "8/16/2012" "black/white"
+   "8/17/2012" "red/white"
+   "8/21/2012" "light grey/black"
+   "8/29/2012" "no hat"
+   "8/30/2012" "no hat"
+   "8/31/2012" "no hat"
+   "9/4/2012"  "red/white"
+   "9/5/2012"  "black/white"
+   "9/6/2012"  "teal/white"
+   "9/7/2012"  "light grey/black"
+   "9/18/2012" "black/white"
+   "9/20/2012" "light grey/black"
+   "9/21/2012" "sky blue/white"
+   "9/25/2012" "teal/white"
+   "9/27/2012" "sky blue/white"
+   "9/28/2012" "light grey/black"
+   "10/2/2012"  "sky blue/white"
+   "10/3/2012"  "red/white"
+   "10/4/2012"  "no hat"
+   "10/5/2012"  "teal/white"
+   "10/8/2012"  "sky blue/white"
+   "10/9/2012"  "teal/white"
+   "10/12/2012" "light grey/black"
+   "10/17/2012" "black/white"
+   "10/18/2012" "black/white"})
 
 (def fmt (formatter "MM/dd/yyyy"))
 
@@ -50,7 +93,7 @@
 (defn ds-row
   "The row for the given set of observations, at time t"
   [obs t]
-  (let [previous-days (take-while pos? (iterate dec 7))]
+  (let [previous-days (take-while pos? (iterate dec 4))]
     (concat 
       ; Today
       [(obs t)]
@@ -65,9 +108,9 @@
         ds   (make-dataset 
                "hats" 
                [{:today hats}
-                {:prev7 hats} 
-                {:prev6 hats} 
-                {:prev5 hats} 
+;                {:prev7 hats} 
+;                {:prev6 hats} 
+;                {:prev5 hats} 
                 {:prev4 hats} 
                 {:prev3 hats} 
                 {:prev2 hats} 
